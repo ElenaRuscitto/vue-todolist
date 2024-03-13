@@ -48,7 +48,7 @@
           <!-- quando è falsa todo niente e qnd è vera, la sottolineo -->
           <span v-if="!task.isDone "> {{ task.todo }} </span>
           <span v-else :style="{'text-decoration' : 'line-through'}"> {{ task.todo }} </span>
-          <i class="fa-solid fa-trash-can"></i>
+          <i @click="deleteTask(indice)" class="fa-solid fa-trash-can"></i>
         </li>
 
       </ul>

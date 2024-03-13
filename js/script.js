@@ -37,9 +37,7 @@ createApp ({
         isDone: false
       },
 
-      deleteTask: {
-
-      }
+    
 
     }
   },
@@ -50,6 +48,10 @@ createApp ({
     addTask (){
       this.todoList.unshift(this.newTask)
       this.newTask = ''
+    },
+
+    deleteTask(indice) {
+      this.todoList.splice(indice, 1)
     }
   
   }
