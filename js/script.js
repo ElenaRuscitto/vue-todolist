@@ -47,7 +47,11 @@ createApp ({
     // stampo i todo nell'htmls
     addTask() {
       this.todoList.unshift(this.newTask)
-      this.newTask = ''
+
+      this.newTask = {
+        todo: '',
+        isDone: false
+      };
     },
 
     deleteTask(indice) {
