@@ -45,7 +45,7 @@ createApp ({
   methods: {
 
     // stampo i todo nell'htmls
-    addTask (){
+    addTask() {
       this.todoList.unshift(this.newTask)
       this.newTask = ''
     },

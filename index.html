@@ -46,8 +46,8 @@
         <li v-for="(task, indice) in todoList">
 
           <!-- quando è falsa todo niente e qnd è vera, la sottolineo -->
-          <span v-if="!task.isDone "> {{ task.todo }} </span>
-          <span v-else :style="{'text-decoration' : 'line-through'}"> {{ task.todo }} </span>
+          <span v-if="!task.isDone " :class="'green'"> {{ task.todo }} </span>
+          <span v-else :style="{'text-decoration' : 'line-through'}" :class="'red'"> {{ task.todo }} </span>
           <i @click="deleteTask(indice)" class="fa-solid fa-trash-can"></i>
         </li>
 
