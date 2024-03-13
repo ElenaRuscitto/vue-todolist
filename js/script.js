@@ -33,9 +33,13 @@ createApp ({
 
       // creo una nuov a task di oggetti
       newTask: {
-        task: '',
+        todo: '',
         isDone: false
       },
+
+      deleteTask: {
+
+      }
 
     }
   },
@@ -45,6 +49,7 @@ createApp ({
     // stampo i todo nell'htmls
     addTask (){
       this.todoList.unshift(this.newTask)
+      this.newTask = ''
     }
   
   }
