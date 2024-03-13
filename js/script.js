@@ -69,7 +69,11 @@ createApp ({
     },
 
     deleteTask(indice) {
-      this.todoList.splice(indice, 1)
+      // utente può cancellare solo cose già depennate
+      if (this.todoList[indice].isDone) {
+        this.todoList.splice(indice, 1)
+      }
+      
     },
 
     // cambio al click lo stato della lista

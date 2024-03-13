@@ -49,7 +49,10 @@
           <!-- quando è falsa todo niente e qnd è vera, la sottolineo -->
           <span v-if="!task.isDone " :class="'red'"> {{ task.todo }} </span>
           <span v-else :style="{'text-decoration' : 'line-through'}" :class="'green'"> {{ task.todo }} </span>
-          <i @click.stop="deleteTask(indice)" class="fa-solid fa-trash-can"></i>
+          
+          <i 
+          @click.stop="deleteTask(indice)" 
+          class="fa-solid fa-trash-can"></i>
         </li>
 
       </ul>
