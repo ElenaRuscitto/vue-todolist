@@ -1,4 +1,4 @@
-const {createApp} = Vue,
+const {createApp} = Vue;
 
 createApp ({
   data() {
@@ -6,25 +6,47 @@ createApp ({
       todoList: [
       
         {
-          task: 'Rilassarmi',
-          Bool: false
+          todo: 'Rilassarmi',
+          isDone: false
         },
 
         {
-          task: 'Vedere un Film'
+          todo: 'Vedere un film',
+          isDone: false
         },
 
         {
-          task: 'Leggere un Libro'
+          todo: 'Leggere un libro',
+          isDone: false
         },
 
-      ]
+        {
+          todo: 'Andare a fare la spesa',
+          isDone: true
+        },
+        
+        {
+          todo: 'Mettere su la lavatrice',
+          isDone: true
+        },
+      ],
+
+      // creo una nuov a task di oggetti
+      newTask: {
+        task: '',
+        isDone: false
+      },
 
     }
   },
 
   methods: {
-console.log(todoList);
+
+    // stampo i todo nell'htmls
+    addTask (){
+      this.todoList.unshift(this.newTask)
+    }
+  
   }
 
 }).mount ('#app')
