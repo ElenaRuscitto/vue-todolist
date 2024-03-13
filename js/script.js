@@ -26,7 +26,7 @@ createApp ({
         },
         
         {
-          todo: 'Mettere su la lavatrice',
+          todo: 'Caricare la lavatrice',
           isDone: true
         },
       ],
@@ -37,8 +37,8 @@ createApp ({
         isDone: false
       },
 
-    
-
+      messageError: '',
+      todoString: ''
     }
   },
 
@@ -46,12 +46,26 @@ createApp ({
 
     // stampo i todo nell'htmls
     addTask() {
-      this.todoList.unshift(this.newTask)
+      // condizione per il messaggio errore sotto i 4 caratteri
+      if(this.todoString.length < 4) {
 
-      this.newTask = {
-        todo: '',
-        isDone: false
-      };
+        this.messageError = 'Attenzione, il testo inserito deve essere superiore a 4 caratteri';
+        
+
+      } else {
+
+        this.newTask = {
+          todo : this.todoString,
+          isDone: false
+          
+        };
+        // reset errormessage
+        this.todoList.unshift(this.newTask);
+        this.messageError = '';
+        
+      }
+      // reset stringa
+      this.todoString = ''
     },
 
     deleteTask(indice) {

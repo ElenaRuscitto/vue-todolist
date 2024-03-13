@@ -31,12 +31,12 @@
     <div class="new-task">
 
       <input  
-        v-model.trim="newTask.todo"
+        v-model.trim="todoString"
         @keyup.enter="addTask"
         placeholder="Nuovo task"
         type="text">
       <button @click="addTask">Aggiungi</button>
-      <p class="error"></p>
+      <p class="error">{{messageError}}</p>
     </div>
 
     <div class="task-container">
@@ -46,8 +46,8 @@
         <li v-for="(task, indice) in todoList">
 
           <!-- quando è falsa todo niente e qnd è vera, la sottolineo -->
-          <span v-if="!task.isDone " :class="'green'"> {{ task.todo }} </span>
-          <span v-else :style="{'text-decoration' : 'line-through'}" :class="'red'"> {{ task.todo }} </span>
+          <span v-if="!task.isDone " :class="'red'"> {{ task.todo }} </span>
+          <span v-else :style="{'text-decoration' : 'line-through'}" :class="'green'"> {{ task.todo }} </span>
           <i @click="deleteTask(indice)" class="fa-solid fa-trash-can"></i>
         </li>
 
