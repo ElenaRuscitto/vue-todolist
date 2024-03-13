@@ -70,8 +70,14 @@ createApp ({
 
     deleteTask(indice) {
       this.todoList.splice(indice, 1)
+    },
+
+    // cambio al click lo stato della lista
+    changeDo(indice) {
+      this.todoList[indice].isDone = !this.todoList[indice].isDone
+         
     }
-  
+
   }
 
 }).mount ('#app')

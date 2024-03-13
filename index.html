@@ -43,12 +43,13 @@
       <ul>
 
         <!-- con v-for stampo quanti todo quanto è lunga la lista -->
-        <li v-for="(task, indice) in todoList">
+        <li v-for="(task, indice) in todoList"
+        @click="changeDo(indice)">
 
           <!-- quando è falsa todo niente e qnd è vera, la sottolineo -->
           <span v-if="!task.isDone " :class="'red'"> {{ task.todo }} </span>
           <span v-else :style="{'text-decoration' : 'line-through'}" :class="'green'"> {{ task.todo }} </span>
-          <i @click="deleteTask(indice)" class="fa-solid fa-trash-can"></i>
+          <i @click.stop="deleteTask(indice)" class="fa-solid fa-trash-can"></i>
         </li>
 
       </ul>
